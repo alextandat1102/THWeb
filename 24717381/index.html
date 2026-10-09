@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Bookstore Online</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+
+<body>
+    <h1>Chào mừng đến Bookstore Online</h1>
+    <div id="book-list">
+        <div class="book" data-genre="fiction">
+            <h3>Đắc Nhân Tâm</h3>
+            <p class="price">120.000đ</p>
+        </div>
+        <div class="book" data-genre="skill">
+            <h3>Tư Duy Nhanh và Chậm</h3>
+            <p class="price">150.000đ</p>
+        </div>
+        <div class="book" data-genre="fiction">
+            <h3>Nhà Giả Kim</h3>
+            <p class="price">89.000đ</p>
+        </div>
+        <button id="btnclick">Click to add jquery</button>
+        <button id="btnxoa">Click to remove jquery</button>
+        <button id="update">Nhấn để cập nhật nội dung mới</button>
+        <button id="updatehtml">Nhấn để thay đổi HTML giá tiền </button>
+        <br><label> 
+            <input type="checkbox" id="agree-checkbox">
+            Tôi đồng ý với điều khoản
+        </label></br>
+        <button id="bat">Bật</button>
+        <button id="tat">Tắt</button>
+        <br>
+        <button id="doc">Thông tin Sách đầu tiên</button>
+    </div>
+    <script>
+        $(document).ready(function() {
+            console.log("jQuery đã sẵn sàng!");
+
+            // 1. Đếm số sách hiện có
+            console.log("Số sách:", $(".book").length);
+
+            // 2. Lấy sách thể loại fiction
+            $("[data-genre='fiction']").css(
+                "border", "2px solid orange"
+            );
+
+            // 3. Lấy tên cuốn sách đầu tiên và cuối cùng
+            console.log("Sách đầu tiên:", $(".book:first h3").text());
+            console.log("Sách cuối cùng:", $(".book:last h3").text());
+
+            // 4. Bật jQuery: thêm hiệu ứng
+            $("#btnclick").on("click", function() {
+                $(".book").css({
+                    "background-color": "#fff3cd",
+                    "padding": "10px",
+                    "margin": "10px 0",
+                    "border-radius": "8px"
+                });
+
+                $(".price").css("color", "red");
+
+                console.log("Đã bật hiệu ứng jQuery");
+            });
+
+            // 5. Tắt hiệu ứng: xóa các CSS đã thêm
+            $("#btnxoa").on("click", function() {
+                $(".book").css({
+                    "background-color": "",
+                    "padding": "",
+                    "margin": "",
+                    "border-radius": ""
+                });
+
+                $(".price").css("color", "");
+
+                console.log("Đã tắt hiệu ứng jQuery");
+            });
+            //6. Thêm nút cập nhật nội dung text
+            $("#update").on("click", function() {
+                $(".book:first h3").text("Đắc Nhân Tâm (Bản mới)");
+                console.log("Đã cập nhật nội dung text");
+            });
+            //7. Thay đổi HTML (chèn thẻ được)
+            $("#updatehtml").on("click", function() {
+                $(".book:first .price").html("<strong>90.000đ</strong>");
+                console.log("Đã thay doi HTML");
+            });
+            //8 Thao tác với thuộc tính boolean (checked, disabled...)
+            $(document).ready(function() {
+                    $("#bat").on("click", function() {
+                        $("#agree-checkbox").prop("checked", true);
+                        console.log("Bật checkbox");
+                    })
+                    $("#tat").on("click", function() {
+                        $("#agree-checkbox").prop("checked", false);
+                        console.log("Tắt checkbox");
+                    })
+                })
+                //9 Đọc dữ liệu data 
+            $(document).ready(function() {
+                $("#doc").on("click", function() {
+                    console.log("Tên Sách :", $(".book:first h3").text());
+                    console.log("Thể loại : ", $(".book:first").data("genre"));
+                    console.log("Gia Tien : ", $(".book:first .price").text());
+                })
+            })
+        });
+    </script>
+</body>
+
+</html>
+</body>
+
+</html>
