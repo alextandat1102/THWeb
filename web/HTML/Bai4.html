@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kiểm tra chuỗi</title>
+
+    <script src="../JS/jquery-3.7.1.min.js"></script>
+</head>
+
+<body>
+
+    <h1>Bài 4. Số điện Thoại</h1>
+    <input type="text" id="txt3">
+    <button id="click3">Kiểm tra tên đăng nhập</button>
+
+    <p id="result3"></p>
+    <script>
+        $("#click3").on("click", function() {
+            let s = $("#txt3").val();
+            let regex = /^[a-z0-9_]{5,15}$/;
+
+            if (regex.test(s)) {
+                $("#result3").text("Chuỗi hợp lệ!");
+            } else {
+                $("#result3").text("Chuỗi không hợp lệ!");
+            }
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kiểm tra chuỗi</title>
+
+    <script src="../JS/jquery-3.7.1.min.js"></script>
+</head>
+
+<body>
+
+    <h1>Bài 7. Ngày dạng dd/mm/yyyy </h1>
+    <input type="text" id="txt">
+    <button id="click">Kiểm tra Ngày</button>
+
+    <p id="result"></p>
+    <script>
+        $("#click").on("click", function() {
+            let s = $("#txt").val();
+            let regex = /^[0-9]{2}\/[0-9]{2}\/[0-9]{4}$/;
+            if (regex.test(s)) {
+                $("#result").text("Định dạng hợp lệ!");
+            } else {
+                $("#result").text("Định dạng không hợp lệ!");
+            }
+        });
+    </script>
+</body>
+
+</html>
