@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="button" value="Cong" onclick="cong()">
+    <input type="button" value="Tru" onclick="tru()">
+    <input type="button" value="Nhan" onclick="nhan()">
+    <input type="button" value="Chia" onclick="Chia()">
+    <script>
+        function cong() {
+            var a = prompt("Nhap a");
+            var b = prompt("Nhap b");
+            var c = Number(a) + Number(b);
+            document.write("ketqua:" + a + "+" + b + "=" + c);
+        }
+
+        function tru() {
+            var a = prompt("Nhap a");
+            var b = prompt("Nhap b");
+            var c = Number(a) - Number(b);
+            document.write("ketqua:" + a + "-" + b + "=" + c);
+        }
+
+        function nhan() {
+            var a = prompt("Nhap a");
+            var b = prompt("Nhap b");
+            var c = Number(a) * Number(b);
+            document.write("ketqua:" + a + "*" + b + "=" + c);
+        }
+
+        function Chia() {
+            var a = prompt("Nhap a");
+            var b = prompt("Nhap b");
+            var c = Number(a) / Number(b);
+            document.write("ketqua:" + a + "/" + b + "=" + c);
+        }
+    </script>
+
+</body>
+
+</html>
